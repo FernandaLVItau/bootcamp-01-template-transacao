@@ -1,23 +1,26 @@
 package br.com.zup.cartaotransacao.entities;
 
+import javax.persistence.Id;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+
+@Entity
 public class Cartao {
 
+    @Id
     private String id;
+    @NotBlank
+    private String idLegado;
+    @NotBlank
     private String email;
 
-    public String getId() {
-        return id;
-    }
+    @Deprecated
+    public Cartao(){}
 
-    public String getEmail() {
-        return email;
-    }
-
-    @Override
-    public String toString() {
-        return "Cartao{" +
-                "id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public Cartao(String id, @NotBlank String idLegado, @NotBlank String email) {
+        this.id = id;
+        this.idLegado = idLegado;
+        this.email = email;
     }
 }

@@ -1,17 +1,13 @@
 package br.com.zup.cartaotransacao.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
-public class EventoDeTransacao {
-
+public class TransacaoRequest {
     private String id;
     private BigDecimal valor;
     private String efetivadaEm;
-    private Estabelecimento estabelecimento;
-    private Cartao cartao;
+    private EstabelecimentoRequest estabelecimento;
+    private CartaoRequest cartao;
 
 
     public String getId() {
@@ -26,11 +22,11 @@ public class EventoDeTransacao {
         return efetivadaEm;
     }
 
-    public Estabelecimento getEstabelecimento() {
+    public EstabelecimentoRequest getEstabelecimento() {
         return estabelecimento;
     }
 
-    public Cartao getCartao() {
+    public CartaoRequest getCartao() {
         return cartao;
     }
 
