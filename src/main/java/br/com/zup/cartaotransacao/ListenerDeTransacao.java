@@ -1,5 +1,6 @@
 package br.com.zup.cartaotransacao;
 
+import br.com.zup.cartaotransacao.entities.EventoDeTransacao;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 

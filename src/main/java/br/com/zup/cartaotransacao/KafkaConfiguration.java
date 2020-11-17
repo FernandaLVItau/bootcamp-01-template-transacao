@@ -1,5 +1,6 @@
 package br.com.zup.cartaotransacao;
 
+import br.com.zup.cartaotransacao.entities.EventoDeTransacao;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
