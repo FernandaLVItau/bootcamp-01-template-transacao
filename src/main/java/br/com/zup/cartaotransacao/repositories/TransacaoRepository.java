@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TransacaoRepository extends JpaRepository<Transacao, String> {
-    List<Transacao> findByCartao(Cartao cartao);
+    List<Transacao> findTop10ByCartaoOrderByEfetivadaEmDesc(Cartao cartao);
 }

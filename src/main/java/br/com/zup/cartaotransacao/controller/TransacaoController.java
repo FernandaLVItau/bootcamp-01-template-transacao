@@ -35,10 +35,11 @@ public class TransacaoController {
             return ResponseEntity.notFound().build();
         }
 
-        List<Transacao> listaTransacoes = transacaoRepository.findByCartao(verificaCartao.get());
+        List<Transacao> listaTransacoes = transacaoRepository.findTop10ByCartaoOrderByEfetivadaEmDesc(verificaCartao.get());
 
         List<TransacaoRetorno> transacaoRetornos = listaTransacoes.stream()
                 .map(TransacaoRetorno::new)
+                .limit(10)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(transacaoRetornos);
