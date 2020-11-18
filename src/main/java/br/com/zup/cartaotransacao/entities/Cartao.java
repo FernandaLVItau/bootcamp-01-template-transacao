@@ -8,9 +8,8 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Cartao {
 
-    @Id
-    private String id;
     @NotBlank
+    @Id
     private String idLegado;
     @NotBlank
     private String email;
@@ -18,8 +17,7 @@ public class Cartao {
     @Deprecated
     public Cartao(){}
 
-    public Cartao(String id, @NotBlank String idLegado, @NotBlank String email) {
-        this.id = id;
+    public Cartao(@NotBlank String idLegado, @NotBlank String email) {
         this.idLegado = idLegado;
         this.email = email;
     }

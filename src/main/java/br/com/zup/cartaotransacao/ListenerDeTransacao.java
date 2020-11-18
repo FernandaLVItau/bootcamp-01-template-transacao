@@ -32,17 +32,9 @@ public class ListenerDeTransacao {
 
         String idCartaoLegado = transacaoRequest.getCartao().getId();
         String email = transacaoRequest.getCartao().getEmail();
-        /*
-          Criando idCartao aleatório temporariamente
-          TODO: 17/11/2020
-          Busca em proposta o id do cartão
-         */
-        double random_double1 = Math.random() * (99999 - 10000 + 1) + 10000;
-        double random_double2 = Math.random() * (99999 - 10000 + 1) + 10000;
-        String idCartao = "Teste-" + random_double1 + "_" + random_double2;
 
         Optional<Cartao> verificaCartao = cartaoRepository.findByIdLegado(idCartaoLegado);
-        Cartao cartao = verificaCartao.orElse(new Cartao(idCartao, idCartaoLegado, email));
+        Cartao cartao = verificaCartao.orElse(new Cartao(idCartaoLegado, email));
 
         Estabelecimento estabelecimento = transacaoRequest.getEstabelecimento().toModel();
 

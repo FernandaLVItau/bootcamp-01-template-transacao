@@ -40,4 +40,16 @@ public class Transacao {
         this.estabelecimento = estabelecimento;
         this.cartao = cartao;
     }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
+    }
+
+    public Estabelecimento getEstabelecimento() {
+        return estabelecimento;
+    }
 }
